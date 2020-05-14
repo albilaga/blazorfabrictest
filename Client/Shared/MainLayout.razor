@@ -1,0 +1,108 @@
+﻿@inherits LayoutComponentBase
+
+    <div class="container">
+        <header class="ms-bgColor-themePrimary ms-fontColor-white">
+            <div class="header-text">
+                <IconButton IconName="WaffleOffice365" OnClick="@OnWaffleClick" id="btnAppIcon"></IconButton>
+                <span class="ms-fontSize-18">@Text</span>
+            </div>
+            <div class="header-links">
+                <LayerHost>
+                    <div @onclick="ProfileClick" id="profileContainer">
+                        <BlazorFabric.Persona Text="@UserName"
+                                              HidePersonalDetails="true"
+                                              Presence=@PersonaPresenceStatus.Online
+                                              InitialsColor="#498205"
+                                              PresenceTitle="Online"
+                                              Size=@PersonaSize.Size32
+                                              ShowInitialsUntilImageLoads="true" CoinSize="32" />
+                    </div>
+                    <Panel IsOpen=@isProfilePanelOpen
+                           OnDismiss=@PanelDismiss
+                           Type=@PanelType.SmallFixedFar
+                           IsLightDismiss="false"
+                           Style="top:3.3em;color:#000;">
+                        <Text Variant="@TextType.XLargePlus">My Account</Text>
+                        <Stack Horizontal="true" Style="margin-top:2em;width:100%">
+                            <BlazorFabric.Persona Text="@UserName"
+                                                  HidePersonalDetails="true"
+                                                  Presence=@PersonaPresenceStatus.Online
+                                                  PresenceTitle="Online"
+                                                  InitialsColor="#498205"
+                                                  Size=@PersonaSize.Size56
+                                                  ShowInitialsUntilImageLoads="true" />
+                            <StackItem Style="margin-left:1em">
+                                <div>
+                                    <div>
+                                        <Text Variant="@TextType.XLarge">@UserName</Text>
+                                    </div>
+                                    <div>
+                                        <Text Variant="@TextType.SmallPlus">@Email</Text>
+                                    </div>
+                                    <div>
+                                        <a href="javascript:void(0)" class="ms-fontWeight-bold ms-fontColor-themeDarker" @onclick="OnSignout" style="text-decoration: none">
+                                            Sign out
+                                        </a>
+                                    </div>
+                                </div>
+                            </StackItem>
+
+                        </Stack>
+                    </Panel>
+                </LayerHost>
+            </div>
+
+        </header>
+        <main>
+
+            <div class="ms-Grid" dir="ltr">
+                <div class="ms-Grid-row">
+                    <div class="ms-Grid-col">
+                        @Body
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+        @code{
+            bool isProfilePanelOpen = false;
+
+            [Parameter]
+            public string UserName { get; set; }
+            [Parameter]
+            public string Email { get; set; }
+            [Parameter]
+            public EventCallback<MouseEventArgs> OnSignout { get; set; }
+
+            [Parameter]
+            public string Text { get; set; }
+
+            [Parameter]
+            public RenderFragment ChildContent { get; set; }
+
+            [Parameter]
+            public EventCallback OnAppIconClick { get; set; }
+
+            public async Task OnWaffleClick()
+            {
+                await OnAppIconClick.InvokeAsync(null);
+            }
+
+            protected override void OnInitialized()
+            {
+                UserName = "test username";
+                Email = "dummyemail@email.com";
+                Text = "test";
+            }
+
+            void ProfileClick()
+            {
+                isProfilePanelOpen = true;
+            }
+
+            void PanelDismiss()
+            {
+                isProfilePanelOpen = false;
+            }
+        }

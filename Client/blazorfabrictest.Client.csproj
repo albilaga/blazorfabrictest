@@ -1,0 +1,64 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <RazorLangVersion>3.0</RazorLangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="3.2.0-rc1.20223.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Build" Version="3.2.0-rc1.20223.4" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="3.2.0-rc1.20223.4" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.Authentication.WebAssembly.Msal" Version="3.2.0-rc1.20223.4" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="3.1.4" />
+    <PackageReference Include="System.Net.Http.Json" Version="3.2.0-rc1.20217.1" />
+    <PackageReference Include="BlazorFabric.Calendar" Version="3.0.0" />
+    <PackageReference Include="BlazorFabric.Callout" Version="3.0.0" />
+    <PackageReference Include="BlazorFabric.Check" Version="3.0.0" />
+    <PackageReference Include="BlazorFabric.Checkbox" Version="3.0.0" />
+    <PackageReference Include="BlazorFabric.CommandBar" Version="3.0.0" />
+    <PackageReference Include="BlazorFabric.ContextualMenu" Version="3.0.0" />
+    <PackageReference Include="BlazorFabric.DatePicker" Version="3.0.0" />
+    <PackageReference Include="BlazorFabric.DelayedRender" Version="3.0.0" />
+    <PackageReference Include="BlazorFabric.DetailsList" Version="3.0.0" />
+    <PackageReference Include="BlazorFabric.DetailsRow" Version="3.0.0" />
+    <PackageReference Include="BlazorFabric.Dialog" Version="3.0.0" />
+    <PackageReference Include="BlazorFabric.Dropdown" Version="3.0.0" />
+    <PackageReference Include="BlazorFabric.FabricTheme" Version="3.0.0" />
+    <PackageReference Include="BlazorFabric.FocusTrapZone" Version="3.0.0" />
+    <PackageReference Include="BlazorFabric.FocusZone" Version="3.0.0" />
+    <PackageReference Include="BlazorFabric.GroupedList" Version="3.0.0" />
+    <PackageReference Include="BlazorFabric.Icon" Version="3.0.0" />
+    <PackageReference Include="BlazorFabric.Image" Version="3.0.0" />
+    <PackageReference Include="BlazorFabric.Keytip" Version="3.0.0" />
+    <PackageReference Include="BlazorFabric.Label" Version="3.0.0" />
+    <PackageReference Include="BlazorFabric.Layer" Version="3.0.0" />
+    <PackageReference Include="BlazorFabric.Link" Version="3.0.0" />
+    <PackageReference Include="BlazorFabric.List" Version="3.0.0" />
+    <PackageReference Include="BlazorFabric.MessageBar" Version="3.0.0" />
+    <PackageReference Include="BlazorFabric.Modal" Version="3.0.0" />
+    <PackageReference Include="BlazorFabric.Nav" Version="3.0.0" />
+    <PackageReference Include="BlazorFabric.OverflowSet" Version="3.0.0" />
+    <PackageReference Include="BlazorFabric.Overlay" Version="3.0.0" />
+    <PackageReference Include="BlazorFabric.Panel" Version="3.0.0" />
+    <PackageReference Include="BlazorFabric.Persona" Version="3.0.0" />
+    <PackageReference Include="BlazorFabric.Pivot" Version="3.0.0" />
+    <PackageReference Include="BlazorFabric.Popup" Version="3.0.0" />
+    <PackageReference Include="BlazorFabric.ProgressIndicator" Version="3.0.0" />
+    <PackageReference Include="BlazorFabric.Rating" Version="3.0.0" />
+    <PackageReference Include="BlazorFabric.ResizeGroup" Version="3.0.0" />
+    <PackageReference Include="BlazorFabric.ResponsiveLayout" Version="3.0.0" />
+    <PackageReference Include="BlazorFabric.Spinner" Version="3.0.0" />
+    <PackageReference Include="BlazorFabric.Stack" Version="3.0.0" />
+    <PackageReference Include="BlazorFabric.Text" Version="3.0.0" />
+    <PackageReference Include="BlazorFabric.TextField" Version="3.0.0" />
+    <PackageReference Include="BlazorFabric.Toggle" Version="3.0.0" />
+    <PackageReference Include="BlazorFabric.Tooltip" Version="3.0.0" />
+    <PackageReference Include="BlazorFabric.Button" Version="3.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Shared\blazorfabrictest.Shared.csproj" />
+  </ItemGroup>
+
+</Project>
